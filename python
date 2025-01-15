@@ -1,0 +1,47 @@
+""" Oliver is planning a movie night with his friends and wants to download a high-definition movie. He knows the file size of the movie in megabytes (MB) and his internet speed in megabits per second (Mbps). To ensure the movie is ready in time, Oliver needs to calculate the download time.
+
+
+
+Your task is to write a program that calculates the download time and displays it in hours, minutes, and seconds.
+
+
+
+Example
+
+
+
+Input:
+
+MB = 800
+
+mbps = 40
+
+Output:
+
+Download Time: 0 hours, 2 minutes, and 40 seconds
+
+Explanation:
+
+Convert the file size to bits (800 MB * 8 bits/byte = 6400 megabits) and divide it by the download speed (6400 Mbps / 40 Mbps = 160 seconds).
+Now, convert the download time in seconds to hours, minutes, and seconds: 160 seconds is equal to 2 minutes and 40 seconds.
+So, the download time is 0 hours, 2 minutes and 40 seconds.
+
+Input format :
+The first line of input consists of an integer N, representing the file size in megabytes (MB).
+
+The second line consists of an integer S, representing the network speed in megabits per second(mbps).
+
+Output format :
+The output prints "Download Time: X hours, Y minutes, and Z seconds", where X, Y, and Z are integers representing the hours, minutes, and seconds respectively."""
+
+file_size_MB = int(input())
+network_speed_mbps = int(input())
+
+download_time_sec = (file_size_MB * 8 ) // network_speed_mbps
+
+hours = download_time_sec // 3600
+remaining_seconds = download_time_sec % 3600
+minutes = remaining_seconds // 60
+seconds = remaining_seconds % 60
+
+print(f"Download Time: {hours} hours, {minutes} minutes, and {seconds} seconds")
